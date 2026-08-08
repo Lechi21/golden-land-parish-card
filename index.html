@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Royal House Of Grace Int'l Church — Golden Land Parish</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<style>
+    :root{
+        --emerald-deep:   #0f2e22;
+        --emerald:        #16452f;
+        --emerald-soft:   #1f5c3f;
+        --gold:           #c9a13b;
+        --gold-bright:    #e6c76a;
+        --ivory:          #faf6ec;
+        --paper:          #fffdf8;
+        --ink:            #2a2a24;
+        --ink-soft:       #6b6a5f;
+        --whatsapp:       #21ba5a;
+        --crimson:        #7a1d1d;
+    }
+
+    *{ margin:0; padding:0; box-sizing:border-box; }
+
+    body{
+        background:
+        radial-gradient(circle at 20% -10%, rgba(201,161,59,.10), transparent 45%),
+        radial-gradient(circle at 100% 0%, rgba(15,46,34,.06), transparent 40%),
+        var(--ivory);
+        font-family:'Inter', sans-serif;
+        color:var(--ink);
+        display:flex;
+        justify-content:center;
+        padding:48px 18px;
+        min-height:100vh;
+    }
+
+    .frame{
+        max-width:450px;
+        width:100%;
+    }
+
+    .container{
+        background:var(--paper);
+        border-radius:22px;
+        overflow:hidden;
+        box-shadow:0 24px 60px -20px rgba(15,46,34,.35), 0 2px 8px rgba(15,46,34,.08);
+        position:relative;
+        border:1px solid rgba(201,161,59,.35);
+    }
+
+    /* ---------- Hero ---------- */
+    .hero{
+        position:relative;
+        height:210px;
+    }
+    .hero img{
+        width:100%;
+        height:100%;
+        object-fit:cover;
+        display:block;
+    }
+    .hero::after{
+        content:"";
+        position:absolute; inset:0;
+        background:linear-gradient(180deg, rgba(15,46,34,0) 45%, rgba(11,27,20,.75) 100%);
+    }
+    .hero-tagline{
+        position:absolute;
+        left:20px; bottom:14px;
+        right:20px;
+        color:var(--gold-bright);
+        font-family:'Cormorant Garamond', serif;
+        font-style:italic;
+        font-size:15px;
+        letter-spacing:.4px;
+        z-index:2;
+    }
+
+    /* ---------- Crest badge ---------- */
+    .crest{
+        width:84px; height:84px;
+        border-radius:50%;
+        background:var(--paper);
+        border:3px solid var(--gold);
+        margin:-42px auto 0;
+        position:relative;
+        z-index:3;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        box-shadow:0 6px 16px rgba(0,0,0,.18);
+    }
+    .crest i{
+        font-size:30px;
+        color:var(--emerald);
+    }
+
+    /* ---------- Heading ---------- */
+    .heading{
+        text-align:center;
+        padding:14px 26px 0;
+    }
+    .heading h1{
+        font-family:'Cormorant Garamond', serif;
+        font-weight:700;
+        font-size:26px;
+        line-height:1.15;
+        color:var(--emerald-deep);
+        letter-spacing:.2px;
+    }
+    .parish{
+        margin-top:6px;
+        font-size:11.5px;
+        letter-spacing:3px;
+        text-transform:uppercase;
+        color:var(--gold);
+        font-weight:600;
+    }
+
+    .divider{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        gap:10px;
+        margin:16px auto 4px;
+        width:70%;
+    }
+    .divider .line{
+        flex:1;
+        height:1px;
+        background:linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+    .divider .dot{
+        width:5px; height:5px;
+        background:var(--gold);
+        transform:rotate(45deg);
+        flex-shrink:0;
+    }
+
+    /* ---------- Info card ---------- */
+    .card{
+        margin:20px 24px 4px;
+        background:linear-gradient(180deg, rgba(201,161,59,.06), rgba(201,161,59,0));
+        border:1px solid rgba(201,161,59,.28);
+        border-radius:14px;
+        padding:18px 18px 6px;
+    }
+
+    .item{
+        display:flex;
+        gap:14px;
+        align-items:flex-start;
+        margin-bottom:16px;
+    }
+    .icon-ring{
+        flex-shrink:0;
+        width:32px; height:32px;
+        border-radius:50%;
+        border:1.4px solid var(--gold);
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        color:var(--emerald);
+        font-size:13px;
+        margin-top:1px;
+    }
+    .item .text{
+        font-size:14.5px;
+        line-height:1.5;
+        color:var(--ink);
+        padding-top:4px;
+    }
+    .item .label{
+        display:block;
+        font-size:10.5px;
+        text-transform:uppercase;
+        letter-spacing:1.6px;
+        color:var(--ink-soft);
+        margin-bottom:2px;
+    }
+
+    /* ---------- Buttons ---------- */
+    .buttons{
+        display:flex;
+        flex-direction:column;
+        gap:12px;
+        padding:22px 24px 26px;
+    }
+
+    .btn{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        gap:10px;
+        text-decoration:none;
+        padding:14px;
+        border-radius:11px;
+        font-weight:600;
+        font-size:14.5px;
+        letter-spacing:.2px;
+        transition:transform .18s ease, box-shadow .18s ease, filter .18s ease;
+    }
+    .btn i{ font-size:15px; }
+
+    .btn:hover{ transform:translateY(-2px); }
+    .btn:active{ transform:translateY(0); }
+
+    .btn-primary{
+        background:linear-gradient(135deg, var(--emerald-deep), var(--emerald-soft));
+        color:var(--ivory);
+        box-shadow:0 8px 20px -8px rgba(15,46,34,.6);
+    }
+    .btn-primary:hover{ box-shadow:0 10px 24px -8px rgba(15,46,34,.7); }
+
+    .btn-outline{
+        background:transparent;
+        color:var(--emerald-deep);
+        border:1.4px solid var(--emerald-deep);
+    }
+    .btn-outline:hover{ background:rgba(15,46,34,.05); }
+
+    .btn-whatsapp{
+        background:var(--whatsapp);
+        color:#fff;
+        box-shadow:0 8px 20px -8px rgba(33,186,90,.55);
+    }
+
+    .btn-watch{
+        background:linear-gradient(135deg, var(--crimson), #9c2a2a);
+        color:#f7e9c9;
+        border:1px solid rgba(230,199,106,.4);
+        box-shadow:0 8px 20px -8px rgba(122,29,29,.55);
+    }
+
+    /* ---------- Footer ---------- */
+    footer{
+        text-align:center;
+        padding:16px 20px 20px;
+        border-top:1px solid rgba(201,161,59,.28);
+        background:var(--paper);
+        color:var(--ink-soft);
+        font-size:12px;
+        letter-spacing:.3px;
+    }
+    footer .fa-crown{
+        color:var(--gold);
+        margin-right:6px;
+        font-size:10px;
+    }
+
+    @media (max-width:380px){
+        .heading h1{ font-size:23px; }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="frame">
+    <div class="container">
+
+        <div class="hero">
+        <img src="./images/Golden Land Parish.png" alt="Royal House Of Grace Int'l Church building">
+        <!-- <div class="hero-tagline">Loving God. Serving People.</div> -->
+        </div>
+
+        <div class="crest">
+        <i class="fas fa-crown"></i>
+        </div>
+
+        <div class="heading">
+        <h1>Royal House Of Grace<br>Int'l Church</h1>
+        <div class="parish">Golden Land Parish</div>
+        <div class="divider"><span class="line"></span><span class="dot"></span><span class="line"></span></div>
+        </div>
+
+        <div class="card">
+
+        <div class="item">
+            <div class="icon-ring"><i class="fas fa-location-dot"></i></div>
+            <div class="text">
+            <span class="label">Address</span>
+            2nd Avenue, Lane 2, Eliminigwe Housing Estate, D'Young Junction, Elelenwo
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="icon-ring"><i class="fas fa-clock"></i></div>
+            <div class="text">
+            <span class="label">Sunday Service</span>
+            8:00 AM
+            </div>
+        </div>
+
+        <div class="item">
+            <div class="icon-ring"><i class="fas fa-clock"></i></div>
+            <div class="text">
+            <span class="label">Wednesday Service</span>
+            5:00 PM
+            </div>
+        </div>
+
+    </div>
+
+    <div class="buttons">
+
+        <a href="tel:+2348037078076" class="btn btn-primary">
+            <i class="fas fa-phone"></i> Call Us
+        </a>
+
+        <a href="https://wa.me/+2348037078076" class="btn btn-whatsapp">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+
+        <a href="https://maps.app.goo.gl/rAmcggJb15ZLM58r7" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-map-location-dot"></i> Get Directions
+        </a>
+
+        <a href="https://youtube.com" class="btn btn-watch" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-youtube"></i> Watch Online
+        </a>
+
+    </div>
+
+    <footer>
+        <i class="fas fa-crown"></i>© 2026 Golden Land Parish
+    </footer>
+
+    </div>
+</div>
+
+</body>
+</html>
